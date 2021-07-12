@@ -22,9 +22,11 @@ class StepAdapter(private val items: List<MyItem>) : TimelineAdapter<StepAdapter
     override fun bindView(timelineStep: TimelineStep, item: MyItem) {
 
         with(timelineStep) {
+
             setActive(item.isActive)
-            setAnchor(item.formattedDate)
+            //setAnchor(item.formattedDate)
             setSubtitle(item.desc)
+            setAnchorMaxWidth(24)
 //            setSubtitleTextAppearance(R.style.SubTitleText)
 //            setAnchorTextAppearance(R.style.AnchorText)
 //            setTitleTextAppearance(R.style.Titl)

@@ -6,10 +6,12 @@ import android.graphics.Rect
 import androidx.annotation.ColorInt
 import androidx.annotation.StyleRes
 import android.util.AttributeSet
+import android.util.Log
 import android.view.*
 import android.view.animation.LinearInterpolator
 import android.widget.FrameLayout
 import android.widget.TableLayout
+import androidx.core.view.setPadding
 
 
 public class TimelineLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
@@ -164,6 +166,8 @@ public class TimelineLayout(context: Context, attrs: AttributeSet?, defStyleAttr
             val scaleEnd = (activeDotTopMargin + (activeDot.measuredHeight / 2) - progressBarForegroundTopMargin) /
                     progressBarBackground.measuredHeight.toFloat()
 
+            Log.d("scaleEnd", "scaleEnd: $scaleEnd")
+
             progressBarForeground
                 .animate()
                 .setStartDelay(resources.getInteger(R.integer.sequence_step_duration).toLong())
@@ -210,12 +214,12 @@ public class TimelineLayout(context: Context, attrs: AttributeSet?, defStyleAttr
     override fun addView(child: View, index: Int, params: ViewGroup.LayoutParams) {
         if (child is TimelineStep) {
             if (child.isActive()) {
-                child.setPadding(
-                    0,
-                    if (stepsWrapper.childCount == 0) 0 else resources.getDimensionPixelSize(R.dimen.sequence_active_step_padding_top), //no paddingTop if first step is active
-                    0,
-                    resources.getDimensionPixelSize(R.dimen.sequence_active_step_padding_bottom)
-                )
+                child.setPadding(0)
+//                child.setPadding(
+//                    0, if (stepsWrapper.childCount == 0) 0 else resources.getDimensionPixelSize(R.dimen.sequence_active_step_padding_top), //no paddingTop if first step is active
+//                    0,
+//                    resources.getDimensionPixelSize(R.dimen.sequence_active_step_padding_bottom)
+//                )
             }
             stepsWrapper.addView(child, params)
             return

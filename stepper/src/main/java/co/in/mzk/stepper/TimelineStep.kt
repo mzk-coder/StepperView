@@ -41,7 +41,7 @@ public class TimelineStep(context: Context?, attrs: AttributeSet?)
         title = findViewById(R.id.title)
 
         setupAnchor(attributes)
-        setupAnchorWidth(attributes)
+        //setupAnchorWidth(attributes)
         setupAnchorTextAppearance(attributes)
         setupTitle(attributes)
         setupTitleTextAppearance(attributes)
