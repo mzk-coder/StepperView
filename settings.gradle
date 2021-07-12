@@ -1,0 +1,3 @@
+rootProject.name = "StepperView"
+include ':app'
+include ':stepper'

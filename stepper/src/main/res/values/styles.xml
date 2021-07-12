@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SequenceLayout">
+        <item name="progressForegroundColor">?colorAccent</item>
+        <item name="progressBackgroundColor">@color/grey</item>
+    </style>
+
+    <style name="SequenceStep">
+        <item name="anchorTextAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="anchorMinWidth">@dimen/sequence_anchor_min_width</item>
+        <item name="anchorMaxWidth">@dimen/sequence_anchor_max_width</item>
+    </style>
+
+
+</resources>
